@@ -21,3 +21,7 @@
 .scrollbar-hidden:hover::-webkit-scrollbar-thumb {
     @apply bg-secondary-border;
 }
+
+body {
+    @apply flex shrink-0;
+}

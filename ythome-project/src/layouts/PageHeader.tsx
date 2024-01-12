@@ -1,5 +1,6 @@
 import { ArrowLeft, Bell, Menu, Mic, Search, Upload, User } from "lucide-react";
-import logo from "../assets/metoobe.png";
+import logo_sm from "../assets/metoobe_small.png"
+import logo_lg from "../assets/metoobe_large.png"
 import { Button } from "../components/Button";
 import { useState } from "react";
 import { useSidebarContext } from "../contexts/SidebarContext";
@@ -73,15 +74,24 @@ type PageHeaderFirstSectionProps = {
 export function PageHeaderFirstSection({ hidden = false }: PageHeaderFirstSectionProps) {
   const { toggle } = useSidebarContext();
   return (      <div
-    className={`flex gap-4 items-center flex-shrink-0 ${
+    className={`flex gap-4 items-center flex-shrink-0 xs:flex-shrink ${
       hidden ? "hidden" : "flex"
     }`}
   >
     <Button onClick={toggle} variant="ghost" size="icon">
       <Menu />
     </Button>
-    <a href="/">
-      <img src={logo} className="h-8" alt="metoob logo" />
+    <a className="flex-shrink-0" href="/">
+      {/* Large Icon */}
+      <div className="lg:flex hidden">
+        <img src={logo_lg} className="h-8" alt="metoobe logo large" />
+      </div>
+
+      {/* Small Icon */}
+      <div className="flex lg:hidden">
+        <img src={logo_sm} className="h-8" alt="metoobe logo small" />
+      </div>
+      
     </a>
   </div>);
 }
