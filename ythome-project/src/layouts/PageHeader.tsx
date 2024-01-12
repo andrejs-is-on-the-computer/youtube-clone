@@ -8,7 +8,7 @@ import { useSidebarContext } from "../contexts/SidebarContext";
 export function PageHeader() {
   const [showFullWidthSearch, setShowFullWidthSearch] = useState(false);
   return (
-    <div className="flex gap-10 lg:gap-20 justify-between pt-2 mb-6 mx-4">
+    <div className="flex gap-10 lg:gap-20 justify-between pt-2 mb-3 sm:mb-6 mx-1 sm:mx-4">
       {/* Logo and Hamburger Button */}
       <PageHeaderFirstSection hidden={showFullWidthSearch} />
       {/* Searchbar and Microphone */}
@@ -53,7 +53,8 @@ export function PageHeader() {
         <Button size="icon" variant="ghost" className="md:hidden">
           <Mic />
         </Button>
-        <Button size="icon" variant="ghost">
+        {/* <Button size="icon" variant="ghost" className="hidden xs:block"> */}
+        <Button size="icon" variant="ghost" className="sm:flex hidden">
           <Upload />
         </Button>
         <Button size="icon" variant="ghost">
@@ -78,7 +79,8 @@ export function PageHeaderFirstSection({ hidden = false }: PageHeaderFirstSectio
       hidden ? "hidden" : "flex"
     }`}
   >
-    <Button onClick={toggle} variant="ghost" size="icon">
+    {/* px-2 sm:px-4 */}
+    <Button onClick={toggle} variant="ghost" size="icon" className="sm:p-2.5 px-1">
       <Menu />
     </Button>
     <a className="flex-shrink-0" href="/">

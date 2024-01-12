@@ -10,7 +10,7 @@ export default function App() {
   const [selectedCategory, setSelectedCategory] = useState(categories[0])
   return (
   <SidebarProvider>
-    <div className="max-h-screen flex flex-col">
+    <div className="max-h-screen overflow-y-hidden min-height-full flex flex-col">
 
         {/* Navbar */}
         <PageHeader />
@@ -20,13 +20,13 @@ export default function App() {
           <Sidebar />
 
           {/* Video Item grid + Categories */}
-          <div className="overflow-x-hidden px-4 pb-4">
-            <div className="sticky top-0 bg-white z-10 pb-4">
+          <div className="overflow-x-hidden pb-4">
+            <div className="sticky top-0 bg-white px-2 sm:px-4 z-10 pb-4">
               <CategoryPills categories={categories} 
                 selectedCategory={selectedCategory} 
                 onSelect={setSelectedCategory} />
             </div>
-            <div className="grid gap-4 grid-cols-[repeat(auto-fill,minmax(300px,1fr))]">
+            <div className="px-2 sm:px-4 grid gap-4 grid-cols-[repeat(auto-fill,minmax(300px,1fr))]">
               {videos.map(video => (
                 <VideoGridItem 
                   key={video.id}

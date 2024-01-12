@@ -159,10 +159,13 @@ type SmallSideBarItemProps = {
  url: string;
 };
 
-function SmallSidebarItem({ Icon, title, url }: SmallSideBarItemProps) {
+function SmallSidebarItem({ Icon, title, 
+  // url 
+}: SmallSideBarItemProps) {
  return (
   <a
-   href={url}
+  //  href={url}
+    href="/"
    className={twMerge(
     buttonStyles({ variant: "ghost" }),
     "py-4 px-1 flex flex-col items-center rounded-lg gap-1"
@@ -222,12 +225,13 @@ type LargeSideBarItemProps = {
 function LargeSidebarItem({
  IconOrImgUrl,
  title,
- url,
+//  url,
  isActive = false,
 }: LargeSideBarItemProps) {
  return (
   <a
-   href={url}
+  //  href={url}
+    href='/'
    className={twMerge(
     buttonStyles({ variant: "ghost" }),
     `w-full flex items-center rounded-lg gap-4 p-3 ${
