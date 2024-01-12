@@ -20,7 +20,7 @@ export default function App() {
           <Sidebar />
 
           {/* Video Item grid + Categories */}
-          <div className="overflow-x-hidden px-8 pb-4">
+          <div className="overflow-x-hidden px-4 pb-4">
             <div className="sticky top-0 bg-white z-10 pb-4">
               <CategoryPills categories={categories} 
                 selectedCategory={selectedCategory} 
