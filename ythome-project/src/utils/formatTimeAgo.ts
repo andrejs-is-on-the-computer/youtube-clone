@@ -13,11 +13,13 @@ const formatter = new Intl.RelativeTimeFormat(undefined, {
   ]
   
   export function formatTimeAgo(date: number | Date) {
+    // @ts-ignore
     let duration = (date - new Date()) / 1000
   
     for (let i = 0; i < DIVISIONS.length; i++) {
       const division = DIVISIONS[i]
       if (Math.abs(duration) < division.amount) {
+        // @ts-ignore
         return formatter.format(Math.round(duration), division.name)
       }
       duration /= division.amount
